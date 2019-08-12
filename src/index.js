@@ -1,3 +1,5 @@
 import './styles.css';
 import './hello-lit';
-import './my-element';
+import './pie-chart';
+import './bar-diagram';
+import './todo-app';

@@ -13,7 +13,6 @@ export class HelloLit extends LitElement {
     };
   }
   render() {
-    console.log(this.isTrue);
     return html`
       <div>
         My name is ${this.name} and ${this.isTrue ? 'yes' : 'no'}
