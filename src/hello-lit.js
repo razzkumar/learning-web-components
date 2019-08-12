@@ -3,20 +3,20 @@ import { LitElement, html } from 'lit-element';
 export class HelloLit extends LitElement {
   constructor() {
     super();
-    this.name = 'rajkumar rai';
+    this.name = ' rai';
   }
+  static get styles() {}
   static get properties() {
     return {
       name: { type: String },
+      isTrue: Boolean,
     };
   }
   render() {
+    console.log(this.isTrue);
     return html`
       <div>
-        <slot></slot>
-
-        My name is ${this.name}
-        <slot @click="${this.handleClick}" name="data"></slot>
+        My name is ${this.name} and ${this.isTrue ? 'yes' : 'no'}
       </div>
     `;
   }
