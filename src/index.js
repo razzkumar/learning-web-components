@@ -63,18 +63,28 @@ class MyApp extends LitElement {
         }
       </style>
       <nav class="nav-bar">
-        <a href="/">home</a>
-        <a href="/pie-chart">Pie Chart</a>
-        <a href="/bar-diagram">Bar diagram</a>
-        <a href="/about">about</a>
+        <a href="/learning-web-components/">home</a>
+        <a href="/learning-web-components/pie-chart">Pie Chart</a>
+        <a href="/learning-web-components/bar-diagram">Bar diagram</a>
+        <a href="/learning-web-components/about">about</a>
       </nav>
 
       <div class="app-content">
         <lit-route><h1>404</h1></lit-route>
-        <lit-route path="/" component="todo-app"> </lit-route>
-        <lit-route path="/pie-chart" component="pie-chart"></lit-route>
-        <lit-route path="/bar-diagram" component="bar-diagram"></lit-route>
-        <lit-route path="/about" component="app-about"></lit-route>
+        <lit-route path="/learning-web-components/" component="todo-app">
+        </lit-route>
+        <lit-route
+          path="/learning-web-components/pie-chart"
+          component="pie-chart"
+        ></lit-route>
+        <lit-route
+          path="/learning-web-components/bar-diagram"
+          component="bar-diagram"
+        ></lit-route>
+        <lit-route
+          path="/learning-web-components/about"
+          component="app-about"
+        ></lit-route>
       </div>
     `;
   }

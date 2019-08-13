@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "sw.js",
+  "homepage": "https://razzkumar.github.io/learning-web-components/",
   "scripts": {
     "webpack": "webpack",
     "webpack-dev-server": "webpack-dev-server --history-api-fallback",
