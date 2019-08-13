@@ -1,13 +1,12 @@
-import './styles.css';
-// import './my-app';
-import './pie-chart';
-import './bar-diagram';
-import './todo-app';
-import './app-about';
-
 import { LitElement, html } from 'lit-element';
 import { connectRouter, navigate } from 'lit-redux-router';
 import store from './redux/store';
+
+import './todo-app';
+import './pie-chart';
+import './app-about';
+import './styles.css';
+import './bar-diagram';
 
 connectRouter(store);
 class MyApp extends LitElement {

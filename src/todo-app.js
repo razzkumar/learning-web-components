@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, css } from 'lit-element';
 import store from './redux/store';
 import { connect } from 'pwa-helpers';
 
@@ -21,9 +21,21 @@ class TodoApp extends connect(store)(LitElement) {
     this.todos = [];
   }
 
+  // provided by connect HOF
   stateChanged(state) {
     this.todos = state.todos.todos;
     this.filter = state.todos.filter;
+  }
+
+  static get styles() {
+    return css`
+      :host {
+        display: block;
+      }
+      ul {
+        list-style: none;
+      }
+    `;
   }
 
   static get properties() {
