@@ -1,0 +1,5 @@
+export const ADD_TODO = 'ADD_TODO';
+
+export const UPDATE_TODO_STATUS = 'UPDATE_TODO_STATUS';
+export const UPDATE_FILTER = 'UPDATE_FILTER';
+export const CLEAR_COMPLETED = 'CLEAR_COMPLETED';

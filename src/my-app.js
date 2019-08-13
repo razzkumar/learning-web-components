@@ -1,48 +1,76 @@
 import { LitElement, html } from 'lit-element';
-import { routerMixin } from 'lit-element-router';
+import { connectRouter, navigate } from 'lit-redux-router';
+import store from './redux/store';
 
-class MyApp extends routerMixin(LitElement) {
-  static get routes() {
-    return [
-      {
-        name: 'home',
-        pattern: '',
-      },
-      {
-        name: 'info',
-        pattern: 'info',
-      },
-      {
-        name: 'user',
-        pattern: 'user/:id',
-      },
-      {
-        name: 'not-found',
-        pattern: '*',
-      },
-    ];
+connectRouter(store);
+class MyApp extends LitElement {
+  goToAbout() {
+    store.dispatch(navigate('/about'));
   }
-
-  onRoute(route, params, query, data) {
-    cthis.route = route;
-    this.params = params;
-  }
-
   render() {
     return html`
-      <router-wrapper currentRoute="${this.route}">
-        <div route="home">Home any-arbitary-lit-element</div>
-        <div route="info">mY Info any-arbitary-lit-element</div>
-        <div route="user">
-          User ${this.params && this.params.id} any-arbitary-lit-element
-        </div>
-        <div route="not-authorized">
-          Not Authorized any-arbitary-lit-element
-        </div>
-        <div route="not-found">Not Found any-arbitary-lit-element</div>
-      </router-wrapper>
+      <style>
+        :host {
+          font-family: sans-serif;
+          font-weight: 300;
+          background: gray;
+        }
+
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+
+        a:hover {
+          text-decoration: underline;
+        }
+
+        h1 {
+          margin-top: 0;
+          margin-bottom: 16px;
+        }
+
+        .app-content {
+          padding: 16px;
+        }
+
+        .nav-bar {
+          background-color: gray;
+          text-align: center;
+        }
+
+        .nav-bar a {
+          display: inline-block;
+          padding: 16px;
+          color: #fff;
+        }
+        .spacer {
+          height: 1600px;
+        }
+
+        .scrollLink {
+          color: blue;
+        }
+
+        .scrollLink:hover {
+          color: red;
+        }
+      </style>
+      <nav class="nav-bar">
+        <a href="/">home</a>
+        <a href="/pie-chart">Pie Chart</a>
+        <a href="/bar-diagram">Bar diagram</a>
+        <a href="/about">about</a>
+      </nav>
+
+      <div class="app-content">
+        <lit-route><h1>404</h1></lit-route>
+        <lit-route path="/" component="todo-app"> </lit-route>
+        <lit-route path="/pie-chart" component="pie-chart"></lit-route>
+        <lit-route path="/bar-diagram" component="bar-diagram"></lit-route>
+        <lit-route path="/about" component="app-about"></lit-route>
+      </div>
     `;
   }
 }
-
 customElements.define('my-app', MyApp);

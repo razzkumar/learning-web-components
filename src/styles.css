@@ -52,3 +52,6 @@ header {
   background: var(--dark-color);
   color: var(--base-color);
 }
+header a h1 {
+  color: var(--base-color);
+}
