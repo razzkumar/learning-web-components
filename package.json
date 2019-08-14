@@ -2,7 +2,7 @@
   "name": "lit-element-learn",
   "version": "1.0.0",
   "description": "",
-  "main": "sw.js",
+  "main": "index.js",
   "scripts": {
     "webpack": "webpack",
     "webpack-dev-server": "webpack-dev-server --history-api-fallback",
@@ -39,6 +39,7 @@
     "lit-redux-router": "^0.9.12",
     "pwa-helpers": "^0.9.1",
     "redux": "^4.0.4",
-    "redux-devtools-extension": "^2.13.8"
+    "redux-devtools-extension": "^2.13.8",
+    "sortablejs": "^1.10.0-rc3"
   }
 }

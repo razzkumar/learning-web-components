@@ -7,6 +7,7 @@ import './pie-chart';
 import './app-about';
 import './styles.css';
 import './bar-diagram';
+import './sortable';
 
 connectRouter(store);
 class MyApp extends LitElement {
@@ -67,6 +68,7 @@ class MyApp extends LitElement {
         <a href="/pie-chart">Pie Chart</a>
         <a href="/bar-diagram">Bar diagram</a>
         <a href="/about">about</a>
+        <a href="/sortable">Sortable list</a>
       </nav>
 
       <div class="app-content">
@@ -75,6 +77,7 @@ class MyApp extends LitElement {
         <lit-route path="/pie-chart" component="pie-chart"></lit-route>
         <lit-route path="/bar-diagram" component="bar-diagram"></lit-route>
         <lit-route path="/about" component="app-about"></lit-route>
+        <lit-route path="/sortable" component="sortable-list"></lit-route>
       </div>
     `;
   }
